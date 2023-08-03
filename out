@@ -1,0 +1,6 @@
+--bsz=1 --input_len=220 --output_len=200
+Namespace(batch_size=1, input_len=220, model='/root/paddlejob/workspace/output/lzc/vllm/open_llama_13b', n=1, num_iters=20, output_len=200, tensor_parallel_size=1, tokenizer=None, trust_remote_code=False, use_beam_search=False)
+INFO 07-31 18:56:21 llm_engine.py:68] Initializing an LLM engine with config: model='/root/paddlejob/workspace/output/lzc/vllm/open_llama_13b', tokenizer='/root/paddlejob/workspace/output/lzc/vllm/open_llama_13b', tokenizer_mode=auto, trust_remote_code=False, dtype=torch.float16, use_dummy_weights=False, download_dir=None, use_np_weights=False, tensor_parallel_size=1, seed=0)
+INFO 07-31 18:56:21 tokenizer.py:29] For some LLaMA-based models, initializing the fast tokenizer may take a long time. To eliminate the initialization time, consider using 'hf-internal-testing/llama-tokenizer' instead of the original tokenizer.
+NCCL version 2.14.3+cuda11.7
+INFO 07-31 18:56:54 llm_engine.py:187] # GPU blocks: 3840, # CPU blocks: 327

@@ -114,6 +114,7 @@ class Sequence:
         self.output_tokens: List[str] = []
         self.output_text = ""
 
+        # 
         self.logical_token_blocks: List[LogicalTokenBlock] = []
         # Initialize the logical token blocks with the prompt token ids.
         self._append_tokens_to_blocks(prompt_token_ids)
@@ -173,6 +174,7 @@ class Sequence:
     def is_finished(self) -> bool:
         return SequenceStatus.is_finished(self.status)
 
+    # when use？
     def fork(self, child_seq: "Sequence") -> None:
         child_seq.logical_token_blocks = copy.deepcopy(
             self.logical_token_blocks)

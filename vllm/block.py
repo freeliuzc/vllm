@@ -25,7 +25,7 @@ class LogicalTokenBlock:
         self.num_tokens = 0
 
     def is_empty(self) -> bool:
-        return self.num_tokens == 0
+        return self.num_tok––ens == 0
 
     def get_num_empty_slots(self) -> int:
         return self.block_size - self.num_tokens

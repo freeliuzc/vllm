@@ -70,12 +70,13 @@ class BlockSpaceManager:
         self.watermark = watermark
         assert watermark >= 0.0
 
+        # ???
         self.watermark_blocks = int(watermark * num_gpu_blocks)
         self.gpu_allocator = BlockAllocator(Device.GPU, block_size,
                                             num_gpu_blocks)
         self.cpu_allocator = BlockAllocator(Device.CPU, block_size,
                                             num_cpu_blocks)
-        # Mapping: seq_id -> BlockTable.
+        # Mapping: seq_id -> physical BlockTable.
         self.block_tables: Dict[int, BlockTable] = {}
 
     def can_allocate(self, seq_group: SequenceGroup) -> bool:
@@ -89,11 +90,12 @@ class BlockSpaceManager:
                 self.watermark_blocks)
 
     def allocate(self, seq_group: SequenceGroup) -> None:
+        # beam_search use same promt
         # NOTE: Here we assume that all sequences in the group have the same
         # prompt.
         seq = seq_group.get_seqs()[0]
 
-        # Allocate new physical token blocks that will store the prompt tokens.
+        # Allocate new """physical""" token blocks that will store the prompt tokens.
         block_table: BlockTable = []
         for _ in range(len(seq.logical_token_blocks)):
             block = self.gpu_allocator.allocate()
@@ -138,6 +140,7 @@ class BlockSpaceManager:
             self.gpu_allocator.free(last_block)
             return last_block.block_number, new_block.block_number
 
+    # shared_ptr
     def fork(self, parent_seq: Sequence, child_seq: Sequence) -> None:
         # NOTE: fork does not allocate a new physical block.
         # Thus, it is always safe from OOM.

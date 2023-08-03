@@ -1,0 +1,45 @@
+--bsz=1 --input_len=300 --output_len=100
+Namespace(batch_size=1, input_len=300, model='/root/paddlejob/workspace/output/lzc/vllm/open_llama_13b', n=1, num_iters=100, output_len=100, tensor_parallel_size=1, tokenizer=None, trust_remote_code=False, use_beam_search=False)
+INFO 07-31 21:25:14 llm_engine.py:68] Initializing an LLM engine with config: model='/root/paddlejob/workspace/output/lzc/vllm/open_llama_13b', tokenizer='/root/paddlejob/workspace/output/lzc/vllm/open_llama_13b', tokenizer_mode=auto, trust_remote_code=False, dtype=torch.float16, use_dummy_weights=False, download_dir=None, use_np_weights=False, tensor_parallel_size=1, seed=0)
+INFO 07-31 21:25:14 tokenizer.py:29] For some LLaMA-based models, initializing the fast tokenizer may take a long time. To eliminate the initialization time, consider using 'hf-internal-testing/llama-tokenizer' instead of the original tokenizer.
+NCCL version 2.14.3+cuda11.7
+INFO 07-31 21:25:46 llm_engine.py:187] # GPU blocks: 3839, # CPU blocks: 327
+SamplingParams(n=1, best_of=1, presence_penalty=0.0, frequency_penalty=0.0, temperature=1.0, top_p=1.0, top_k=-1, use_beam_search=False, stop=[], ignore_eos=True, max_tokens=100, logprobs=None)
+Warming up...
+Avg latency: 2.1023973083496093 seconds
+--bsz=2 --input_len=300 --output_len=100
+Namespace(batch_size=2, input_len=300, model='/root/paddlejob/workspace/output/lzc/vllm/open_llama_13b', n=1, num_iters=100, output_len=100, tensor_parallel_size=1, tokenizer=None, trust_remote_code=False, use_beam_search=False)
+INFO 07-31 21:29:29 llm_engine.py:68] Initializing an LLM engine with config: model='/root/paddlejob/workspace/output/lzc/vllm/open_llama_13b', tokenizer='/root/paddlejob/workspace/output/lzc/vllm/open_llama_13b', tokenizer_mode=auto, trust_remote_code=False, dtype=torch.float16, use_dummy_weights=False, download_dir=None, use_np_weights=False, tensor_parallel_size=1, seed=0)
+INFO 07-31 21:29:29 tokenizer.py:29] For some LLaMA-based models, initializing the fast tokenizer may take a long time. To eliminate the initialization time, consider using 'hf-internal-testing/llama-tokenizer' instead of the original tokenizer.
+NCCL version 2.14.3+cuda11.7
+INFO 07-31 21:30:02 llm_engine.py:187] # GPU blocks: 3837, # CPU blocks: 327
+SamplingParams(n=1, best_of=1, presence_penalty=0.0, frequency_penalty=0.0, temperature=1.0, top_p=1.0, top_k=-1, use_beam_search=False, stop=[], ignore_eos=True, max_tokens=100, logprobs=None)
+Warming up...
+Avg latency: 2.1664194679260254 seconds
+--bsz=4 --input_len=300 --output_len=100
+Namespace(batch_size=4, input_len=300, model='/root/paddlejob/workspace/output/lzc/vllm/open_llama_13b', n=1, num_iters=100, output_len=100, tensor_parallel_size=1, tokenizer=None, trust_remote_code=False, use_beam_search=False)
+INFO 07-31 21:33:53 llm_engine.py:68] Initializing an LLM engine with config: model='/root/paddlejob/workspace/output/lzc/vllm/open_llama_13b', tokenizer='/root/paddlejob/workspace/output/lzc/vllm/open_llama_13b', tokenizer_mode=auto, trust_remote_code=False, dtype=torch.float16, use_dummy_weights=False, download_dir=None, use_np_weights=False, tensor_parallel_size=1, seed=0)
+INFO 07-31 21:33:53 tokenizer.py:29] For some LLaMA-based models, initializing the fast tokenizer may take a long time. To eliminate the initialization time, consider using 'hf-internal-testing/llama-tokenizer' instead of the original tokenizer.
+NCCL version 2.14.3+cuda11.7
+INFO 07-31 21:34:26 llm_engine.py:187] # GPU blocks: 3831, # CPU blocks: 327
+SamplingParams(n=1, best_of=1, presence_penalty=0.0, frequency_penalty=0.0, temperature=1.0, top_p=1.0, top_k=-1, use_beam_search=False, stop=[], ignore_eos=True, max_tokens=100, logprobs=None)
+Warming up...
+Avg latency: 2.295890862941742 seconds
+--bsz=8 --input_len=300 --output_len=100
+Namespace(batch_size=8, input_len=300, model='/root/paddlejob/workspace/output/lzc/vllm/open_llama_13b', n=1, num_iters=100, output_len=100, tensor_parallel_size=1, tokenizer=None, trust_remote_code=False, use_beam_search=False)
+INFO 07-31 21:38:28 llm_engine.py:68] Initializing an LLM engine with config: model='/root/paddlejob/workspace/output/lzc/vllm/open_llama_13b', tokenizer='/root/paddlejob/workspace/output/lzc/vllm/open_llama_13b', tokenizer_mode=auto, trust_remote_code=False, dtype=torch.float16, use_dummy_weights=False, download_dir=None, use_np_weights=False, tensor_parallel_size=1, seed=0)
+INFO 07-31 21:38:28 tokenizer.py:29] For some LLaMA-based models, initializing the fast tokenizer may take a long time. To eliminate the initialization time, consider using 'hf-internal-testing/llama-tokenizer' instead of the original tokenizer.
+NCCL version 2.14.3+cuda11.7
+INFO 07-31 21:39:03 llm_engine.py:187] # GPU blocks: 3820, # CPU blocks: 327
+SamplingParams(n=1, best_of=1, presence_penalty=0.0, frequency_penalty=0.0, temperature=1.0, top_p=1.0, top_k=-1, use_beam_search=False, stop=[], ignore_eos=True, max_tokens=100, logprobs=None)
+Warming up...
+Avg latency: 2.5605515313148497 seconds
+--bsz=16 --input_len=300 --output_len=100
+Namespace(batch_size=16, input_len=300, model='/root/paddlejob/workspace/output/lzc/vllm/open_llama_13b', n=1, num_iters=100, output_len=100, tensor_parallel_size=1, tokenizer=None, trust_remote_code=False, use_beam_search=False)
+INFO 07-31 21:43:34 llm_engine.py:68] Initializing an LLM engine with config: model='/root/paddlejob/workspace/output/lzc/vllm/open_llama_13b', tokenizer='/root/paddlejob/workspace/output/lzc/vllm/open_llama_13b', tokenizer_mode=auto, trust_remote_code=False, dtype=torch.float16, use_dummy_weights=False, download_dir=None, use_np_weights=False, tensor_parallel_size=1, seed=0)
+INFO 07-31 21:43:34 tokenizer.py:29] For some LLaMA-based models, initializing the fast tokenizer may take a long time. To eliminate the initialization time, consider using 'hf-internal-testing/llama-tokenizer' instead of the original tokenizer.
+NCCL version 2.14.3+cuda11.7
+INFO 07-31 21:44:06 llm_engine.py:187] # GPU blocks: 3797, # CPU blocks: 327
+SamplingParams(n=1, best_of=1, presence_penalty=0.0, frequency_penalty=0.0, temperature=1.0, top_p=1.0, top_k=-1, use_beam_search=False, stop=[], ignore_eos=True, max_tokens=100, logprobs=None)
+Warming up...
+Avg latency: 3.3037406873703 seconds

@@ -89,10 +89,13 @@ class Worker:
         # Enable top-k sampling to reflect the accurate memory usage.
         vocab_size = self.model.config.vocab_size
         sampling_params = SamplingParams(top_p=0.99, top_k=vocab_size - 1)
-        max_num_batched_tokens = self.scheduler_config.max_num_batched_tokens
-        max_num_seqs = self.scheduler_config.max_num_seqs
+        max_num_batched_tokens = self.scheduler_config.max_num_batched_tokens   # 2560
+        max_num_seqs = self.scheduler_config.max_num_seqs   # 256
+        # seqs: 存储 max_num_seqs 个 SequenceGroupMetadata
         seqs = []
+        
         for group_id in range(max_num_seqs):
+            # 10 
             seq_len = (max_num_batched_tokens // max_num_seqs +
                        (group_id < max_num_batched_tokens % max_num_seqs))
             seq_data = SequenceData([0] * seq_len)
@@ -291,6 +294,8 @@ class Worker:
             return {}
 
         # Prepare input tensors.
+        # prompt: 所有 prompts 延展为1维
+        # generate：每个为一个维度
         input_tokens, input_positions, input_metadata = self._prepare_inputs(
             seq_group_metadata_list)
 

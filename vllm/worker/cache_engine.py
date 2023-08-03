@@ -13,6 +13,8 @@ logger = init_logger(__name__)
 KVCache = Tuple[torch.Tensor, torch.Tensor]
 
 
+# 
+#
 class CacheEngine:
     """Manages the KV cache.
 
@@ -50,6 +52,7 @@ class CacheEngine:
         # Initialize the events for stream synchronization.
         self.events = [torch.cuda.Event() for _ in range(self.num_layers)]
 
+    # 这里需要这样处理吗？
     def get_key_block_shape(self) -> Tuple[int, int, int, int]:
         element_size = torch.tensor([], dtype=self.dtype).element_size()
         x = 16 // element_size
@@ -139,6 +142,8 @@ class CacheEngine:
         # NOTE(woosuk): This operation implicitly synchronizes the CPU and GPU.
         cache_ops.copy_blocks(key_caches, value_caches, src_to_dsts)
 
+    # block_size:16 * block_num * type_size
+    # 一个 block 的 大小，包含了 n（16）个 token 的 cachekv
     @staticmethod
     def get_cache_block_size(
         block_size: int,

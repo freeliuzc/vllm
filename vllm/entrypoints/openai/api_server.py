@@ -463,6 +463,7 @@ async def create_completion(raw_request: Request):
                         finish_reason=output.finish_reason,
                     )
                     yield f"data: {response_json}\n\n"
+        yield f"previous_num_tokens: {previous_num_tokens[0]}"
         yield "data: [DONE]\n\n"
 
     # Streaming response
